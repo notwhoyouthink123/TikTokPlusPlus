@@ -255,8 +255,8 @@ static BOOL isAuthenticationShowed = FALSE;
 
 %hook TTKSettingsBaseCellPlugin
 - (void)didSelectItemAtIndex:(NSInteger)index {
-    if ([self.itemModel.identifier isEqualToString:@"bhtiktok_settings"]) {
-        UINavigationController *BHTikTokSettings = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
+    if ([self.itemModel.identifier isEqualToString:@"bhtiktokplusplus_settings"]) {
+        UINavigationController *BHTikTokSettings = [[UINavigationController alloc] initWithRootViewController:[BHTikTokPlusPlusViewController new];
         [topMostController() presentViewController:BHTikTokSettings animated:true completion:nil];
     } else {
         return %orig;
@@ -270,7 +270,7 @@ static BOOL isAuthenticationShowed = FALSE;
     if ([self.sectionIdentifier isEqualToString:@"account"]) {
         TTKSettingsBaseCellPlugin *BHTikTokSettingsPluginCell = [[%c(TTKSettingsBaseCellPlugin) alloc] initWithPluginContext:self.context];
 
-        AWESettingItemModel *BHTikTokSettingsItemModel = [[%c(AWESettingItemModel) alloc] initWithIdentifier:@"bhtiktok_settings"];
+        AWESettingItemModel *BHTikTokSettingsItemModel = [[%c(AWESettingItemModel) alloc] initWithIdentifier:@"bhtiktokplusplus_settings"];
         [BHTikTokSettingsItemModel setTitle:@"BHTikTok++ settings"];
         [BHTikTokSettingsItemModel setDetail:@"BHTikTok++ settings"];
         [BHTikTokSettingsItemModel setIconImage:[UIImage systemImageNamed:@"gear"]];
