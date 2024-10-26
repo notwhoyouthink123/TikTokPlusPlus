@@ -10,13 +10,13 @@
 #import "LiveActions.h"
 #import "PlaybackSpeed.h"
 
-@interface ViewController ()
+@interface BHTikTokPlusPlusViewController ()
 @property (nonatomic, strong) UITableView *staticTable;
 @property (nonatomic, assign) BOOL isAdditionalCellVisible;
 @property (nonatomic, assign) UIImage *devImage;
 @end
 
-@implementation ViewController
+@implementation BHTikTokPlusPlusViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
